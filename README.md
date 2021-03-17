@@ -52,10 +52,11 @@ Complete the following table (use binary bits) for the given instuction. Put the
 
 | Assembly Code     |  op  | rs  | rt  | imm              | 
 |-------------------|------|-----|-----|------------------|
-|  slti $7, $5, 15  |      |     |     |                  |
+|  slti $7, $5, 15  |001010|00101|00111|0000 0000 0000 1111|
 
 ```
 Put hex code equivalent here
+28A7000F
 ```
 
 ### I-type Instruction ```ori```
