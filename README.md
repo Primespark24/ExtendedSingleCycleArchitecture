@@ -65,10 +65,11 @@ Complete the following table (use binary bits) for the given instuction. Put the
 
 | Assembly Code     |  op  | rs  | rt  | imm              | 
 |-------------------|------|-----|-----|------------------|
-|   ori $7, $5, 15  |      |     |     |                  |
+|   ori $7, $5, 15  |001101|00101|00111|0000 0000 0000 1111|
 
 ```
 Put hex code equivalent here
+34A7000F
 ```
 
 
