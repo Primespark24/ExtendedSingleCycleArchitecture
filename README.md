@@ -12,7 +12,7 @@ The learning goals for MIPS 4 as are follows:
 | Part                             |   | Points  |
 |----------------------------------|---|---------|
 | MIPS4 - Part 1 - slti and ori    | Done  | 10 pts  |
-| MIPS4 - Part 2 - sll and srl     |   | 10 pts  |     
+| MIPS4 - Part 2 - sll and srl     | Done  | 10 pts  |     
 | MIPS4 - Part 3 - control unit and test program    |   | 10 pts  |  
 | MIPS4 - Mini Presentation        |   | 20 pts  |    
 | Total                            |   | 50 pts  |
