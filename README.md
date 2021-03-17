@@ -11,7 +11,7 @@ The learning goals for MIPS 4 as are follows:
 ### Grade Break Down
 | Part                             |   | Points  |
 |----------------------------------|---|---------|
-| MIPS4 - Part 1 - slti and ori    |   | 10 pts  |
+| MIPS4 - Part 1 - slti and ori    | Done  | 10 pts  |
 | MIPS4 - Part 2 - sll and srl     |   | 10 pts  |     
 | MIPS4 - Part 3 - control unit and test program    |   | 10 pts  |  
 | MIPS4 - Mini Presentation        |   | 20 pts  |    
@@ -82,10 +82,11 @@ Complete the following table (use binary bits) for the given instuction. Put the
 
 | Assembly Code     |  op  | rs  | rt  | rd  |shamt|funct | 
 |-------------------|------|-----|-----|-----|-----|------|
-| sll $7, $5, 4     |      |     |     |     |     |      | 
+| sll $7, $5, 4     |000000|00101|00111|00000|00100|000000| 
 
 ```
 Put hex code equivalent here
+00A70100
 ```
 Complete the following table (use binary bits) for the given instuction. Put the hex code equivalent of the instruction in the space provided below.
 
@@ -93,10 +94,11 @@ Complete the following table (use binary bits) for the given instuction. Put the
 
 | Assembly Code     |  op  | rs  | rt  | rd  |shamt|funct | 
 |-------------------|------|-----|-----|-----|-----|------|
-| srl $7, $5, 4     |      |     |     |     |     |      |
+| srl $7, $5, 4     |000000|00101|00111|00000|00100|000010|
 
 ```
 Put hex code equivalent here
+00A70102
 ```
 
 ## Part 3: Control Unit Modifications and Test Program
