@@ -105,26 +105,34 @@ Put hex code equivalent here
 
 Modify the tables below for the ```main decoder``` and the ```ALU decoder```, as needed, in order to account *for all* the instructions in your processor. You may or may not need to add more control signals.
 
-| **Instruction** | **Op[5:0]** | **RegWrite** | **RegDst** | **AluSrc** | **Branch** | **MemWrite** | **MemtoReg** | **ALUOp[1:0] **|** Jump** |
+| **Instruction** | **Op[5:0]** | **RegWrite** | **RegDst** | **AluSrc** | **Branch** | **MemWrite** | **MemtoReg** | **ALUOp[2:0] **|** Jump** |
 | --------------- | ----------- | ------------ | ---------- | ---------- | ---------- | ------------ | ------------ | -------------- | -------- |
-| R-type          | 000000      | 1 | 1 | 0 | 0 | 0 | 0 | 10 | 0 |
-| lw              | 100011      | 1 | 0 | 1 | 0 | 0 | 1 | 00 | 0 |
-| sw              | 101011      | 0 | X | 1 | 0 | 1 | X | 00 | 0 |
-| beq             | 000100      | 0 | X | 0 | 1 | 0 | X | 01 | 0 |
-| addi            | 001000      | 1 | 0 | 1 | 0 | 0 | 0 | 00 | 0 |
-| j               | 000010      | 0 | X | X | X | 0 | X | XX | 1 |
+| R-type          | 000000      | 1 | 1 | 0 | 0 | 0 | 0 | 010 | 0 |
+| lw              | 100011      | 1 | 0 | 1 | 0 | 0 | 1 | 000 | 0 |
+| sw              | 101011      | 0 | X | 1 | 0 | 1 | X | 000 | 0 |
+| beq             | 000100      | 0 | X | 0 | 1 | 0 | X | 001 | 0 |
+| addi            | 001000      | 1 | 0 | 1 | 0 | 0 | 0 | 000 | 0 |
+| j               | 000010      | 0 | X | X | X | 0 | X | 0XX | 1 |
+-------------------------------------------------------------------
+| slti            | 001010      | 1 | 0 | 1 | 0 | 0 | 0 | 011 | 0 |
+| ori             | 001101      | 1 | 0 | 1 | 0 | 0 | 0 | 101 | 0 |
+| sll             | 000000 (R)  | 1 | 1 | 0 | 0 | 0 | 0 | 010 | 0 |
+| srl             | 000000 (R)  | 1 | 1 | 0 | 0 | 0 | 0 | 010 | 0 |
+
 
 
 You may or may not need to add extra ALUOp signals:
 
-| **ALUOp[1:0]**|** Meaning** |
+| **ALUOp[2:0]**|** Meaning** |
 | ------------- | ----------- |
-| 00            | Add         |
-| 01            | Subtract    |
-| 10            | Look at funct field |
-| 11            |             |
-|               |             |
-|               |             |
+| 000           | Add         |
+| 001           | Subtract    |
+| 010           | Look at funct field |
+| 011           | SLT         |
+| 100           | Look at funct field |
+| 101           | ORI         |
+| 110           | Look at funct field            |
+| 111           | Look at funct field            |
 
 ## Assembly Language Test Program for your modified MIPS single-cycle processor
 
