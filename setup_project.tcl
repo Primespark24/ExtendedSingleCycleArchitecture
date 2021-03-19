@@ -30,7 +30,7 @@ set topLevelTestbenchModuleName "mips_testbench"
 set simulationTestbench "./sim_testbench/mips_testbench.vhd"
 
 # flag to generate bitstream. Set to true if you want to program the board
-set generateBitStream "true"
+set generateBitStream "false"
 
 # Set this to the FPGA part name - (it is already set to the BASYS 3 FPGA part )
 set fpgaPart "xc7a35tcpg236-1"
