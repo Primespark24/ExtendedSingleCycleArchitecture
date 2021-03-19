@@ -2,7 +2,7 @@
 main:   addi $2, $0, 5          # initialize $2 = 5         0           20020005        
         addi $3, $0, 12         # initialize $3 = 12        4           2003000c
         ori  $4, $3, 2          # OR bits of $3 and 2       c           34640002
-        slti $4, $2, 4                                      10          28440004
+        slti $4, $2, 4          # Checks if $4 < $2         10          28440004
         beq  $4, $0, sltiTJ     # should be taken           14          10800001
         addi $2, $0, 12         # shouldn't happen          18          2003000c
 sltiTJ: sll  $5, $3, 4          # Shift $1 4bits left       1c          00032900
