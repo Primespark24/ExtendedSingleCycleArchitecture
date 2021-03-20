@@ -4,10 +4,13 @@
 library IEEE; 
 use IEEE.STD_LOGIC_1164.all; 
 use IEEE.STD_LOGIC_UNSIGNED.all;
+use IEEE.NUMERIC_STD.all;
+use IEEE.MATH_real.all;
 
 entity alu is 
   generic(width: integer);
   port(a, b:       in  STD_LOGIC_VECTOR((width-1) downto 0);
+       shamt:      in  STD_LOGIC_VECTOR(4 downto 0);
        alucontrol: in  STD_LOGIC_VECTOR(3 downto 0);
        result:     inout STD_LOGIC_VECTOR((width-1) downto 0);
        zero:       out STD_LOGIC);
@@ -39,20 +42,24 @@ begin
   -- set the zero flag if result is 0
   zero <= '1' when result = const_zero else '0';
 
---  Testsll(width-1 downto 4) <= a(width-6 downto 0) & '0';
---  Testsrl(width-6 downto 0) <= a(width-1 downto 4) & '0';
+  process(a, shamt)
+  begin
+    for i in 0 to width-1 loop
+      if shamt = STD_LOGIC_VECTOR(to_unsigned(i, width)) then
+        Testsll <= STD_LOGIC_VECTOR(unsigned(a) sll i );
+      end if;
+    end loop;
+  end process;
 
-  --Testsll(width-1 downto 4) <= a(width-5 downto 0) & "000";
+  process(a, shamt)
+  begin
+    for i in 0 to width-1 loop
+      if shamt = STD_LOGIC_VECTOR(to_unsigned(i, width)) then
+        Testsrl <= STD_LOGIC_VECTOR(unsigned(a) srl i );
+      end if;
+    end loop;
+  end process;
 
-  --Testsrl(width-5 downto 0) <= a(width-1 downto width-5);
-  --Testsrl(width-1 downto width-5) <= "0000"; 
-
-  --Testsll <= shift_left(unsigned(a, 4));
-  --Testsrl <= shift_right(unsigned(a, 4));
-
-  with b((width-1) downto 0))
-  Testsll <= a(width-5 downto 0) & "0";
-  Testsrl <= "0" & a(width-5 downto 0);
 
   with alucontrol(3 downto 0) select result <=
     Testsll when "1110",

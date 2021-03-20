@@ -23,6 +23,7 @@ architecture struct of datapath is
   component alu generic(width: integer);
   port(a, b:       in  STD_LOGIC_VECTOR((width-1) downto 0);
        alucontrol: in  STD_LOGIC_VECTOR(3 downto 0);
+       shamt:      in  STD_LOGIC_VECTOR(4 downto 0);
        result:     inout STD_LOGIC_VECTOR((width-1) downto 0);
        zero:       out STD_LOGIC);
   end component;
@@ -116,7 +117,7 @@ architecture struct of datapath is
 	
 	-- wire up the main ALU
 	mainalu:  alu generic map(width) port map(a => srca, b => srcb, 
-	                                          alucontrol => alucontrol, result => aluout, zero => zero);
+	                                          alucontrol => alucontrol, shamt => instr(10 downto 6), result => aluout, zero => zero);
 end;
 
 
