@@ -42,20 +42,20 @@ begin
   -- set the zero flag if result is 0
   zero <= '1' when result = const_zero else '0';
 
-  process(a, shamt)
+  process(b, shamt)
   begin
     for i in 0 to width-1 loop
       if shamt = STD_LOGIC_VECTOR(to_unsigned(i, width)) then
-        Testsll <= STD_LOGIC_VECTOR(unsigned(a) sll i );
+        Testsll <= STD_LOGIC_VECTOR(unsigned(b) sll i );
       end if;
     end loop;
   end process;
 
-  process(a, shamt)
+  process(b, shamt)
   begin
     for i in 0 to width-1 loop
       if shamt = STD_LOGIC_VECTOR(to_unsigned(i, width)) then
-        Testsrl <= STD_LOGIC_VECTOR(unsigned(a) srl i );
+        Testsrl <= STD_LOGIC_VECTOR(unsigned(b) srl i );
       end if;
     end loop;
   end process;
