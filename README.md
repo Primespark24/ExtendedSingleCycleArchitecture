@@ -41,7 +41,7 @@ Please remember the rules of working together well!
 
 Modify the following schematic (if neccessary) to support the four new instructions. This jpg was made from the ```schematic.pptx``` file located in this folder. If you need to modify it in order to support the instructions, you can edit this PowerPoint slide. Once you have modified the slide, you can export it as a jpg into this folder and save it over the existing ```schematic.jpg```. Your changes should then become apparent in this document.  I recommend drawing any new signal wires or components in a different color than in the original schematic.
 
-![Schematic](./Schematic.jpg)
+![Schematic](./img/UpdatedSchematic.png)
 
 ## (10 pts) Part 1: Add the two I-type instructions: slti, ori 
 Add the two instructions to the VHDL hardware for the MIPS single-cycle processor. First, read Appendix B, table B.1 then complete the follow two markdown tables below so that they contains a binary level description of the assembly language instruction given. This will help you understand the format of the instructions. Then add the instructions to the processor.
