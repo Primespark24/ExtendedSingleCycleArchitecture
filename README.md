@@ -204,6 +204,7 @@ Generate a simulation waveform that shows that your group's test program is runn
 
   ### Simulation Waveform Images
 
+![WaveForm](./img/Waveform.png)
 
 ## Running the MIPS Test program on the FPGA
 
