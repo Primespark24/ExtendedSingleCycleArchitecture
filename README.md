@@ -8,14 +8,19 @@ The learning goals for MIPS 4 as are follows:
 * Learn how the VHDL hardware for a MIPS single cycle processor works
 * Learn how to implement new instructions for the MIPS single cyle processor
 
+
 ### Grade Break Down
-| Part                             |   | Points  |
-|----------------------------------|---|---------|
-| MIPS4 - Part 1 - slti and ori    | Done  | 10 pts  |
-| MIPS4 - Part 2 - sll and srl     | Done  | 10 pts  |     
-| MIPS4 - Part 3 - control unit and test program    |   | 10 pts  |  
-| MIPS4 - Mini Presentation        |   | 20 pts  |    
-| Total                            |   | 50 pts  |
+| Part                                              |   | Points  |
+|---------------------------------------------------|---|---------|
+| MIPS4 - Part 1 - slti and ori                     |10 | 10 pts  |
+| MIPS4 - Part 2 - sll and srl                      | 8 | 10 pts  |     
+| MIPS4 - Part 3 - control unit and test program    |10 | 10 pts  |  
+| MIPS4 - Mini Presentation                         |20 | 20 pts  |    
+| Total                                             |48 | 50 pts  |
+
+## Feedback
+* for part 2 you put the registers in the wrong field positions. rs is NOT used for sll and slr. Only rd and rt are used for these instructions.
+* Good job in getting it working! You probabbly had issues because of the problems with instruction formats in  part 2.
 
 # Introduction
 
@@ -82,7 +87,8 @@ Complete the following table (use binary bits) for the given instuction. Put the
 
 | Assembly Code     |  op  | rs  | rt  | rd  |shamt|funct | 
 |-------------------|------|-----|-----|-----|-----|------|
-| sll $7, $5, 4     |000000|00101|00111|00000|00100|000000| 
+| wrong - sll $7, $5, 4     |000000|00101|00111|00000|00100|000000| 
+| corrected - sll $7, $5, 4     |000000|00000|00101|00111|00100|000000| 
 
 ```
 Put hex code equivalent here
@@ -94,7 +100,8 @@ Complete the following table (use binary bits) for the given instuction. Put the
 
 | Assembly Code     |  op  | rs  | rt  | rd  |shamt|funct | 
 |-------------------|------|-----|-----|-----|-----|------|
-| srl $7, $5, 4     |000000|00101|00111|00000|00100|000010|
+| wrong - srl $7, $5, 4     |000000|00101|00111|00000|00100|000010|
+| corrected - srl $7, $5, 4     |000000|00000|00101|00111|00100|000010|
 
 ```
 Put hex code equivalent here
